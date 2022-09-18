@@ -4,3 +4,6 @@ uvicorn
 joblib
 scikit-learn
 numpy
+nest_asyncio
+requests
+pypi-json
