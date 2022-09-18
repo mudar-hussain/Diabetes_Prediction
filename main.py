@@ -53,7 +53,7 @@ class model_input(BaseModel):
     Glucose : int
     BloodPressure: int
     SkinThickness: int
-    insulin: int
+    Insulin: int
     BMI: float
     DiabetesPedigreeFunction: float
     Age: int
@@ -77,7 +77,10 @@ def diabetes_pred(input_parameters: model_input):
     #input_dictionary = json.loads(input_data)
 
     # input_keys = input_dict.keys()
-    input_values = [[*input_dict.values()]]
+    #input_values = [[*input_dict.values()]]
+    
+    input_keys = ['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']
+    input_values = [[input_dict[key] for key in input_keys]] 
 
     pred = diabetes_model.predict(input_values)
     if (pred[0] == 1):
