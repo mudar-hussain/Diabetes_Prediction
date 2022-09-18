@@ -85,10 +85,5 @@ def diabetes_pred(input_parameters: model_input):
     else:
         return 'Person is NOT Diabetic'
 
-"""Code Snipper in order to create public url"""
 
-ngrok_tunnel = ngrok.connect(8000)
-print('Public URL: ', ngrok_tunnel.public_url)
-nest_asyncio.apply()
-uvicorn.run(app, port = 8000)
 
